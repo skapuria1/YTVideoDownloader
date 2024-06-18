@@ -4,6 +4,13 @@ from tkinter import filedialog
 
 
 def download_video(url, save_path):
+    """
+    Downloads a YouTube video.
+
+    Args:
+        url (str): The URL of the YouTube video.
+        save_path (str): The directory where the video will be saved.
+    """
     try:
         yt = YouTube(url)
         streams = yt.streams.filter(progressive=True, file_extension = "mp4")
@@ -15,6 +22,12 @@ def download_video(url, save_path):
     
 
 def open_file_dialog():
+    """
+    Opens a file dialog for selecting a directory.
+
+    Returns:
+        str: The path of the selected directory.
+    """
     folder = filedialog.askdirectory()
     if folder:
         print(f"Selected folder: {folder}")
